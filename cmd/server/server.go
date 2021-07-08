@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	conf, err := config.NewConfig(".env")
+	conf, err := config.NewConfig()
 	check(err)
 
 	handle := handleServices(conf)
