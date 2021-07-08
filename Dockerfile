@@ -15,9 +15,7 @@ FROM scratch
 
 WORKDIR /app
 
-COPY --from=build /checkout/.env .
 COPY --from=build /checkout/products.json .
 COPY --from=build /checkout/server .
-COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 ENTRYPOINT ["/app/server"]
