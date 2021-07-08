@@ -21,11 +21,11 @@ func (c Cart) Validate() error {
 
 	for k, v := range c.Products {
 		if v.ID <= 0 {
-			return errors.New(fmt.Sprintf("products[%v].id: must be greater than zero", k))
+			return fmt.Errorf("products[%v].id: must be greater than zero", k)
 		}
 
 		if v.Quantity <= 0 {
-			return errors.New(fmt.Sprintf("products[%v].quantity: must be greater than zero", k))
+			return fmt.Errorf("products[%v].quantity: must be greater than zero", k)
 		}
 	}
 
