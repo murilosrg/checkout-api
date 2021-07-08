@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/checkout-api/pkg/proto";
+
+package discount;
+
+service Discount {
+    rpc GetDiscount(GetDiscountRequest) returns (GetDiscountResponse) {}
+}
+
+message GetDiscountRequest {
+    int32 productID = 1;
+}
+
+message GetDiscountResponse {
+    float percentage = 1;
+}
